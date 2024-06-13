@@ -4,89 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة تسجيل الدخول</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #5cb85c;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #4cae4c;
-        }
-        .error {
-            color: red;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Login Page</title>
 </head>
 <body>
-
-    <div class="login-container">
-        <h2>تسجيل الدخول</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="اسم المستخدم" required>
-            <input type="password" id="password" placeholder="كلمة المرور" required>
-            <button type="submit">تسجيل الدخول</button>
-            <div id="error" class="error"></div>
-        </form>
-    </div>
+    <form id="loginForm">
+        <label for="username">اسم المستخدم:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">كلمة المرور:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">تسجيل الدخول</button>
+    </form>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var errorDiv = document.getElementById('error');
+            // هذه هي بيانات الاعتماد التي تستخدم للتسجيل
+            const username = event.target.username.value;
+            const password = event.target.password.value;
 
-            var correctUsername = "java"; // استبدل باسم المستخدم الصحيح
-            var correctPassword = "java"; // استبدل بكلمة المرور الصحيحة
-
-            if (username === correctUsername && password === correctPassword) {
-                errorDiv.textContent = "تم تسجيل الدخول بنجاح!";
-                errorDiv.style.color = "green";
-    <a href="https://ijavamulti.github.io/IPA/">
-    </a>
-                
+            // هنا يمكنك إضافة شروط تحقق البيانات مثل قاعدة بيانات أو واجهة برمجة تطبيقات
+            if (username === 'java' && password === 'java') {
+                window.location.href = 'https://ijavamulti.github.io/IPA/';
             } else {
-                errorDiv.textContent = "اسم المستخدم أو كلمة المرور خاطئة.";
-                errorDiv.style.color = "red";
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة');
             }
         });
     </script>
-
 </body>
 </html>
