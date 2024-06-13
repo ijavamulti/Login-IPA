@@ -1,87 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة تسجيل الدخول</title>
+    <title>صفحة شخصية</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
             background-color: #f0f0f0;
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 0;
+            direction: rtl;
         }
         .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 15px;
+            margin-top: 50px;
+            padding: 20px 40px;
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            border-radius: 10px;
+            display: inline-block;
+            transition: transform 0.2s;
         }
-        h2 {
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
             margin-bottom: 20px;
-            color: #333333;
         }
-        .form-control {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        .form-control:focus {
-            border-color: #0066cc;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #0066cc;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #005bb5;
-        }
-        .error {
-            color: #ff0000;
-            margin-top: 10px;
+        .social-links a.facebook { background-color: #3b5998; }
+        .social-links a.telegram { background-color: #1da1f2; }
+        .social-links a.instagram { background-color: Red; }
+        .social-links a.linkedin { background-color: #0077b5; }
+        .social-links a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>تسجيل الدخول</h2>
-        <form id="loginForm">
-            <input type="text" id="username" class="form-control" placeholder="اسم المستخدم" required>
-            <input type="password" id="password" class="form-control" placeholder="كلمة المرور" required>
-            <button type="submit" class="btn">تسجيل الدخول</button>
-            <div id="errorMessage" class="error"></div>
-        </form>
+        <h1>مرحبا! أنا [عبدالعزيز]</h1>
+        <p>تواصل معي عبر وسائل التواصل الاجتماعي:</p>
+        <div class="social-links">
+            <a class="تلقرام" href="https://t.me/ijavamulti" target="_blank">Telegram</a>
+            <a class="قناتي" href="https://t.me/ThatsWeCan" target="_blank">Telegram</a>
+            <a class="متجر برامج بلس" href="https://ijavamulti.github.io/IPA/" target="_blank">instagram</a>
+            <a class="موقع الجامعات" href="https://www.linkedin.com/in/حسابك" target="_blank">facebook</a>
+        </div>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const username = event.target.querySelector('#username').value;
-            const password = event.target.querySelector('#password').value;
-            const errorMessage = document.getElementById('errorMessage');
-
-            // تحقق من بيانات الاعتماد
-            if (username === 'java' && password === 'java') {
-                window.location.href = 'https://ijavamulti.github.io/IPA/';
-            } else {
-                errorMessage.textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
-            }
-        });
-    </script>
 </body>
 </html>
